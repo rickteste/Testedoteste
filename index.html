@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Personagem</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <img src="imagens/ordo-realitas.png" alt="ordo realitas">
+        <h1>Ficha de Personagem</h1>
+    </header>
+    <main>
+        <section class="wrapper">
+            <div class="container D-pessoais">
+                <h2>Dados Pessoais</h2>
+                <label>Nome</label>
+                <input type="text" value="Eduzedu">
+                <label>Jogador</label>
+                <input type="text" value="Eduardo">
+                <label>Ocupação</label>
+                <input type="text" value="Invertigador">
+                <label>Idade</label>
+                <input type="text" value="17 anos">
+                <label>Gênero</label>
+                <input type="text" value="Masculino">
+                <label>Local de Nascimento</label>
+                <input type="text" value="Fortaleza - Ce">
+                <label>Local de Residencia</label>
+                <input type="text" value="Fortaleza - Ce">
+            </div>
+            <div class="status">
+                <img src="imagens/kaiser-perfil.jpg" alt="">
+                <div class="container-barra">
+                    <div>
+                        <p>Vida</p>
+                        <div class="vida-vazia barra-inferior">
+                            <div class="pontos" onclick="handleClickPontos('vida')">
+                                <input type="number" value="50" id="pontos-atuais-totais" readonly="">
+                                <p>/</p>
+                                <input type="number" value="50" id="pontos-maximos-totais" readonly="">
+                            </div>
+                            <div class="vida">
+                            </div>
+                        </div>
+                        <div class="condiçoes">
+                            <div>
+                                <input type="checkbox" name="" id="">
+                                <p>Lesão Grave</p>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="" id="">
+                                <p>Inconsciente</p>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="" id="">
+                                <p>Morrendo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sanidade-container">
+                        <div class="barra-sanidade">
+                            <p>Sanidade</p>
+                            <div class="sanidade-vazia barra-inferior">
+                                <div class="pontos" onclick="handleClickPontos('sanidade')">
+                                    <input type="number" value="50" id="pontos-atuais-totais" readonly="">
+                                    <p>/</p>
+                                    <input type="number" value="50" id="pontos-maximos-totais" readonly="">
+                                </div>
+                                <div class="sanidade">
+                                </div>
+                            </div>
+                            <div class="condiçoes">
+                                <div>
+                                    <input type="checkbox" name="" id="">
+                                    <p>Traumatizado</p>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="" id="">
+                                    <p>Enlouquecido</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://images.vexels.com/media/users/3/232402/isolated/lists/577188470e86ba1944f70149d08ea858-d20-rpg-golpe-de-dados.png" alt="" onclick="callDados('sanidade', 100)">
+                    </div>
+                    <div>
+                        <p>Ocultismo</p>
+                        <div class="ocultismo-vazio barra-inferior">
+                            <div class="pontos" onclick="handleClickPontos('ocultismo')">
+                                <input type="number" value="50" id="pontos-atuais-totais" readonly="">
+                                <p>/</p>
+                                <input type="number" value="50" id="pontos-maximos-totais" readonly="">
+                            </div>
+                            <div class="ocultismo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="upgrade">
+                        <div>
+                            <h4>Dano Extra</h4>
+                            <input type="number" value="0">
+                        </div>
+                        <div>
+                            <h4>Corpo</h4>
+                            <input type="number" value="0">
+                        </div>
+                        <div>
+                            <h4>Exposição Paranormal</h4>
+                            <input type="number" value="50" id="exp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="wrapper">
+            <div class="container">
+                <div class="line-bottom">
+                    <h2>Atributos</h2>
+                </div>
+                <div class="atributos-container">
+                    <div class="atributos">
+                        <img src="https://images.vexels.com/media/users/3/232402/isolated/lists/577188470e86ba1944f70149d08ea858-d20-rpg-golpe-de-dados.png" alt="" onclick="callDados('força', 20)">
+                        <h3>Força</h3>
+                        <input type="number" value="10" id="atributo-valor">
+                    </div>
+                    <div class="atributos">
+                        <img src="https://images.vexels.com/media/users/3/232402/isolated/lists/577188470e86ba1944f70149d08ea858-d20-rpg-golpe-de-dados.png" alt="" onclick="callDados('constituiçao', 20)">
+                        <h3>Constituição</h3>
+                        <input type="number" value="10" id="atributo-valor">
+                    </div>
+                    <div class="atributos">
+                        <img src="https://images.vexels.com/media/users/3/232402/isolated/lists/577188470e86ba1944f70149d08ea858-d20-rpg-golpe-de-dados.png" alt="" onclick="callDados('destreza', 20)">
+                        <h3>Destreza</h3>
+                        <input type="number" value="10" id="atributo-valor">
+                    </div>
+                    <div class="atributos">
+                        <img src="https://images.vexels.com/media/users/3/232402/isolated/lists/577188470e86ba1944f70149d08ea858-d20-rpg-golpe-de-dados.png" alt="" onclick="callDados('aparencia', 20)">
+                        <h3>Aparência</h3>
+                        <input type="number" value="10" id="atributo-valor">
+                    </div>
+                </div>
+                <div class="atributos-container">
+                    <div class="atributos">
+                        <img src="https://images.vexels.com/media/users/3/232402/isolated/lists/577188470e86ba1944f70149d08ea858-d20-rpg-golpe-de-dados.png" alt="" onclick="callDados('educaçao', 20)">
+                        <h3>Educação</h3>
+                        <input type="number" value="10" id="atributo-valor">
+                    </div>
+                    <div class="atributos">
+                        <img src="https://images.vexels.com/media/users/3/232402/isolated/lists/577188470e86ba1944f70149d08ea858-d20-rpg-golpe-de-dados.png" alt="" onclick="callDados('inteligencia', 20)">
+                        <h3>Inteligência</h3>
+                        <input type="number" value="10" id="atributo-valor">
+                    </div>
+                    <div class="atributos">
+                        <img src="https://images.vexels.com/media/users/3/232402/isolated/lists/577188470e86ba1944f70149d08ea858-d20-rpg-golpe-de-dados.png" alt="" onclick="callDados('poder', 20)">
+                        <h3>Poder</h3>
+                        <input type="number" value="10" id="atributo-valor">
+                    </div>
+                    <div class="atributos">
+                        <img src="https://images.vexels.com/media/users/3/232402/isolated/lists/577188470e86ba1944f70149d08ea858-d20-rpg-golpe-de-dados.png" alt="" onclick="callDados('sorte', 20)">
+                        <h3>Sorte</h3>
+                        <input type="number" value="10" id="atributo-valor">
+                    </div>
+                </div>
+                <div class="atributos-container">
+                    <div class="atributos">
+                        <h3>Movimento</h3>
+                        <input type="number" value="8">
+                    </div>
+                    <div class="atributos">
+                        <h3>Tamanho</h3>
+                        <input type="number" value="12">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="line-bottom">
+                    <h2>Pericias</h2>
+                    <p>(Acesso Rapido)</p>
+                </div>
+                <div class="container-pericias-rapidas">
+                    
+                </div>
+            </div>
+        </section>
+        <section class="wrapper">
+            <div class="container combate">
+                <div class="line-bottom more">
+                    <h2>Combate</h2>
+                    <button onclick="add()">+</button>
+                </div>
+                <table class="container-table">
+                    <tbody class="tbody" id="weapons">
+                        <tr>
+                            <th></th>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>Dano</th>
+                            <th>Mun. atual</th>
+                            <th>Mun. maximo</th>
+                            <th>Ataque</th>
+                            <th>Alcance</th>
+                            <th>Defeito</th>
+                            <th>Aréa</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="wrapper">
+            <div class="container pericia">
+                <div class="line-bottom">
+                    <h2>Pericias</h2>
+                </div>
+                <!--tdas as pericias-->
+                <div class="container-pericias">
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Atletismo</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Atualidades</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Ciência</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Diplomacia</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Enganação</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Fortitude</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Furtividade</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Intimidação</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Investigação</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Luta</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Medicina</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Ocultismo</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Percepção</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Pilotagem</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Pontaria</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Prestidigitação</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Profissão</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Reflexos</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Religião</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Tática</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Tecnologia</p>
+                    </div>
+                    <div class="pericias">
+                        <input type="checkbox" id="add-quick-acess">
+                        <input type="number"value="10" id="pericia-value">
+                        <p id="name-pericia">Vontade</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrapper">
+            <div class="container inventory">
+                <div class="line-bottom more">
+                    <div>
+                        <h2>Inventario</h2>
+                        <p id="peso-total">Peso</p>
+                    </div>
+                    <button onclick="addInventory()">+</button>
+                </div>
+                <div class="container-money" onclick="addContainerMoney()">
+                    <p id="money">Dinheiro: </p>
+                </div>
+                <div class="container-inventory">
+                        
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--modificar pontos -->
+    <div class="msg-pontos">
+        <div class="container-pontos">
+            <div class="line-bottom more">
+                <h2 id="titulo-pontos"></h2>
+                <button onclick="sair()">X</button>
+            </div>
+            <div class="modificar-pontos">
+                <div class="container-pontos-atuais">
+                    <label for="">Pontos Atuais</label>
+                    <input type="number" id="pontos-atuais">
+                </div>
+                <div class="container-pontos-maximos">
+                    <label for="">Pontos Maximos</label>
+                    <input type="number" id="pontos-maximos">
+                </div>
+                <button class="add-button" onclick="addPontos()">Adicionar</button>
+            </div>
+        </div>
+    </div>
+
+<!--resultado do dado-->
+    <div class="msg-dado">
+        <div class="rolagem">
+            <div class="top">
+                <h3 id="nome-dado"></h3>
+                <button onclick="sair()">X</button>
+            </div>
+            <div>
+                <h2 id="dado"></h2>
+                <p id="sucesso"></p>
+            </div>
+        </div>
+    </div>
+<!--adicionar arma-->
+    <div class="msg-combat">
+        <div class="add-weapon">
+            <div class="line-bottom more">
+                <h2>Adiconar Arma</h2>
+                <button onclick="backCombat()">X</button>
+            </div>
+            <table class="container-table">
+                <tbody class="tbody">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Dano</th>
+                        <th>Mun. atual</th>
+                        <th>Mun. maxima</th>
+                        <th>Ataques</th>
+                        <th>Alcance</th>
+                        <th>Defeito</th>
+                        <th>Aréa</th>
+                    </tr>
+                    <tr class="weapon-features">
+                        <td><input type="text" id="weapon-characteristics"></td>
+                        <td>
+                            <select name="" id="weapon-characteristics">
+                                <option value="Briga">Briga</option>
+                                <option value="Espada">Espada</option>
+                                <option value="Arco">Arco</option>
+                                <option value="Ritual">Ritual</option>
+                                <option value="Arma/fogo">Arma de fogo</option>
+                            </select>
+                        </td>
+                        <td><input type="text" id="weapon-characteristics"></td>
+                        <td><input type="text" id="weapon-characteristics"></td>
+                        <td><input type="text" id="weapon-characteristics"></td>
+                        <td><input type="text" id="weapon-characteristics"></td>
+                        <td><input type="text" id="weapon-characteristics"></td>
+                        <td><input type="text" id="weapon-characteristics"></td>
+                        <td><input type="text" id="weapon-characteristics"></td>
+                    </tr>
+                </tbody>
+            </table>
+                <button class="add-weapon-button" onclick="addWeapon()">Adicionar Arma</button>
+        </div>
+    </div>
+
+    <div class="msg-inventory">
+        <div class="add-items">
+            <div class="line-bottom more">
+                <h2>Adicionar Item</h2>
+                <button onclick="sair()">X</button>
+            </div>
+            <div class="container-input">
+                <input type="text" placeholder="Nome" id="name-item">
+                <input type="number" placeholder="Peso" id="peso-item">
+                <button class="add-button" onclick="addItems()">Adicionar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="msg-money">
+        <div class="add-money">
+            <div class="line-bottom more">
+                <h2>Dinheiro</h2>
+                <button onclick="sair()">X</button>
+            </div>
+            <div class="container-input">
+                <input type="number" placeholder="Dinheiro" id="money-value">
+                <button class="add-button" onclick="addMoney()">Adicionar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>
